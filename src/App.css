@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+header #logo {
+
+  font-size: 4.5rem;
+  border: 1px solid grey;
+  padding: 0.3em;
+  border-radius: 50%
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  margin: 0;
+  font-size: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  margin: 0 10%;
+}
+
+section {
+  border-top: 1px solid #C7C2C2;
+}
+
+nav {
+  margin: 0 20%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 30%;
 }
 
-.App-link {
-  color: #61dafb;
+nav p {
+  margin-top: 0;
+  padding-top: 10px;
+  font-size: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav p:hover {
+  cursor: pointer;
+}
+
+
+#Projects .ShowCase>*:nth-child(odd)  {
+  margin-right: 3%;
+  margin-left: auto;
+}
+
+#Projects .ShowCase>*:nth-child(even)  {
+  margin-left: 3%;
+  margin-right: auto;
+}
+
+
+@media screen and (min-width: 768px) {
+  #Projects .ShowCase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    column-gap: 10%;
   }
-  to {
-    transform: rotate(360deg);
+
+  header {
+    margin: 0 20%;
+  }
+
+  header #logo {
+    font-size: 5rem;
   }
 }
