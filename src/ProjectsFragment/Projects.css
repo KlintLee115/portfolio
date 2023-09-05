@@ -1,0 +1,36 @@
+.projectCard {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
+
+.projectCard img {
+    width: 100%;
+}
+
+.projectCard p {
+    font-size: 1.5rem;
+}
+
+.projectCard .images-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media screen and (min-width: 768px) {
+
+    .projectCard {
+        width: 90%;
+        text-align: center;
+    }
+
+    .projectCard .images-container {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3%;
+    }
+
+    .projectCard:nth-child(even) {
+        margin-left: auto;
+    }
+}

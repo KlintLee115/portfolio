@@ -1,4 +1,15 @@
-header #logo {
+html,
+body {
+  margin: 0;
+  font-size: 14px;
+}
+
+#App {
+  z-index: 1;
+  position: relative;
+}
+
+#App>header #logo {
 
   font-size: 4.5rem;
   border: 1px solid grey;
@@ -6,28 +17,18 @@ header #logo {
   border-radius: 50%
 }
 
-html,
-body {
-  margin: 0;
-  font-size: 14px;
-}
-
-header {
+#App>header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 10%;
 }
 
-section {
-  border-top: 1px solid #C7C2C2;
-}
-
 nav {
-  margin: 0 20%;
   display: flex;
   justify-content: center;
   gap: 30%;
+  border-top: 1px solid #C7C2C2;
 }
 
 nav p {
@@ -40,31 +41,27 @@ nav p:hover {
   cursor: pointer;
 }
 
-
-#Projects .ShowCase>*:nth-child(odd)  {
-  margin-right: 3%;
-  margin-left: auto;
+#noteShowOff {
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  background-color: aquamarine;
+  left:5%;
+  right:5%;
+  bottom: 10%;
+  display: block;
 }
-
-#Projects .ShowCase>*:nth-child(even)  {
-  margin-left: 3%;
-  margin-right: auto;
-}
-
 
 @media screen and (min-width: 768px) {
-  #Projects .ShowCase {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    column-gap: 10%;
-  }
 
-  header {
+  #App>header {
     margin: 0 20%;
   }
 
-  header #logo {
+  #App>header #logo {
     font-size: 5rem;
+  }
+
+  #noteShowOff {
   }
 }

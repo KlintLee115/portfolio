@@ -1,39 +1,56 @@
-import React, { useState } from 'react';
-import Projects from './Projects/Projects';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faAndroid } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './App.css';
-import { Page, PageOptions } from './Pages/Page';
+import { ProjectsFragment } from './ProjectsFragment/ProjectFragment';
+import NotesFragment from './NotesFragment/NotesFragment';
+import NoteShowOff from './NoteShowOff';
+
+function AppEventListener(e: React.MouseEvent<HTMLDivElement, MouseEvent>, setCurrNote: React.Dispatch<React.SetStateAction<currNoteType>>, currNote: currNoteType) {
+  e.currentTarget === document.getElementById('App') && currNote && setCurrNote(undefined)
+}
+
+type currNoteType = undefined | string
+
+enum TabOptions {
+  Projects, Notes
+}
 
 function App() {
 
-  const [selectedPage, setSelectedPage] = useState(PageOptions.Projects)
+  const [selectedTab, setSelectedTab] = useState(TabOptions.Projects)
+  const [currNote, setCurrNote] = useState<currNoteType>(undefined)
 
   return (
-    <div className="App">
-      <header>
-        <p id='logo'>K.L</p>
-        <div>
-          <p style={{ fontSize: "1.5rem" }}>Klint Lee</p>
-          <p className='header-desc'>Software Engineer</p>
-          <FontAwesomeIcon style={{ marginRight: "2rem" }} icon={faGithub} size="2xl" />
-          <FontAwesomeIcon icon={faLinkedin} size="2xl" />
-          <p className='header-desc'>Specializing in Android  <FontAwesomeIcon icon={faAndroid} size="xl" /></p>
+    <>
+      <div id="App" onClick={(e) => AppEventListener(e, setCurrNote, currNote)}>
+        <header>
+          <p id='logo'>K.L</p>
+          <div>
+            <p style={{ fontSize: "1.5rem" }}>Klint Lee</p>
+            <p className='header-desc'>Software Developer</p>
+            <FontAwesomeIcon style={{ marginRight: "2rem" }} icon={faGithub} size="2xl" />
+            <FontAwesomeIcon icon={faLinkedin} size="2xl" />
+            <p className='header-desc'>Lifes short, keep coding</p>
+            <p className='header-desc'>programmerder@gmail.com</p>
 
-          <p className='header-desc'>Lifes short, keep coding</p>          
-          <p className='header-desc'>programmerder@gmail.com</p>
-
-        </div>
-      </header>
-
-      <section>
+          </div>
+        </header>
         <nav>
-          <p onClick={() => setSelectedPage(PageOptions.Projects)} style={selectedPage === PageOptions.Projects ? { borderTop: "2px solid black" } : {}}>Projects</p>
-          <p onClick={() => setSelectedPage(PageOptions.Blogs)} style={selectedPage === PageOptions.Blogs ? { borderTop: "2px solid black" } : {}}>Blogs</p>
+          <p onClick={() => {
+            setSelectedTab(TabOptions.Projects)
+          }} style={selectedTab === TabOptions.Projects ? { borderTop: "2px solid black" } : {}}>Projects</p>
+          <p onClick={() => setSelectedTab(TabOptions.Notes)} style={selectedTab === TabOptions.Notes ? { borderTop: "2px solid black" } : {}}>Notes</p>
         </nav>
-        <Page pageChoice={selectedPage} />
-      </section>
-    </div>
+
+        {selectedTab === TabOptions.Projects ? <ProjectsFragment /> : <NotesFragment setNote={setCurrNote}/>}
+
+
+      </div>
+
+
+      <NoteShowOff id={currNote} />
+    </>
   );
 }
 
