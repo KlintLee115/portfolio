@@ -1,0 +1,3 @@
+[build]
+  # Ignore warnings during the build process
+  ignore = ["*"]
