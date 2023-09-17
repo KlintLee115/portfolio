@@ -21,7 +21,7 @@ function Project(props: ProjectProps) {
     let images: JSX.Element[] = []
 
     for (let i = 0; i < props.imagesNum; i++) {
-        images.push(<img src={"ProjectsPics/" + props.projectId + "/pic" + i + ".png"} />)
+        images.push(<img key={i} src={"ProjectsPics/" + props.projectId + "/pic" + i + ".png"} />)
     }
 
     techUsed = props.techUsed.reduce((techList: JSX.Element[], val) =>

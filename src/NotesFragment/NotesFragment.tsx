@@ -25,7 +25,7 @@ function NotesFragment(props: { setNote: React.Dispatch<React.SetStateAction<str
 
     if (Object.entries(NotesList).length !== 0) {
         Object.entries(NotesList).forEach((item) => {
-            notesList.push(<><Note setShowOffNote={props.setNote} noteId={item[0]} displayedTitle={(item[1] as any).title} imagesNum={(item[1] as any).imgNum} links={(item[1] as any).referenceLinks} /></>)
+            notesList.push(<><Note key={item[0]} setShowOffNote={props.setNote} noteId={item[0]} displayedTitle={(item[1] as any).title} imagesNum={(item[1] as any).imgNum} links={(item[1] as any).referenceLinks} /></>)
         })
 
         return <div style={NotesFragmentStyle}>{notesList}</div>
