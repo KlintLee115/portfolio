@@ -1,3 +1,4 @@
+import React from "react"
 import NotesList from "./Notes"
 
 interface NoteProps {
@@ -11,11 +12,12 @@ interface NoteProps {
 const NotesFragmentStyle: React.CSSProperties = {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
+    marginBottom:"auto"
 }
 
 function Note(props: NoteProps) {
 
-    return <img onClick={() => props.setShowOffNote(props.noteId)} style={{ width: "100%", aspectRatio: "1/1" }} src={"ProjectsPics/" + props.noteId + "/pic0.png"} />
+    return <img onClick={() => props.setShowOffNote(props.noteId)} style={{ width: "100%", aspectRatio: "1/1", cursor:"pointer" }} src={"NotesPics/" + props.noteId + "/pic0.png"} />
 }
 
 function NotesFragment(props: { setNote: React.Dispatch<React.SetStateAction<string | undefined>> }) {

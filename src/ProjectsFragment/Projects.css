@@ -1,36 +1,75 @@
 .projectCard {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     margin-bottom: 4rem;
+    position: relative;
+    height: 50vh;
 }
 
 .projectCard img {
-    width: 100%;
+    width: 90%;
+    max-height: 40vh;
 }
 
-.projectCard p {
-    font-size: 1.5rem;
+.projectCard .project-container {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 30vh;
+    width: inherit;
+    margin: 0 auto;
 }
 
-.projectCard .images-container {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(1, 1fr);
+.projectCard .project-container img{
+    max-height: 30vh;
+    width: inherit;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.projectCard #icons img {
+    width: 1.5rem;
+}
+
+.projectCard #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projectCard #header #icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
 
     .projectCard {
         width: 90%;
-        text-align: center;
+        height: 70vh;
+        margin-bottom: 8rem;
     }
 
-    .projectCard .images-container {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 3%;
+    .projectCard #header {
+        height: 14vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60%;
     }
 
-    .projectCard:nth-child(even) {
-        margin-left: auto;
+    .projectCard #icons img {
+        width: 1.5rem;
+    }
+
+    .projectCard .project-container {
+        height: 56vh;
+    }
+
+    .projectCard .project-container img{
+        max-height: 54vh
     }
 }

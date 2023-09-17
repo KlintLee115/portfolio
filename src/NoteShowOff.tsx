@@ -1,3 +1,4 @@
+import React from "react";
 import NotesList from "./NotesFragment/Notes";
 
 interface NoteShowOffProps {
@@ -18,19 +19,24 @@ function NoteShowOff(props: NoteShowOffProps) {
     }
 
     let noteId = props.id
-    if (noteId !== undefined) {
+    if (noteId) {
 
-        let note: object = (NotesList as any)[noteId];
+        let note = (NotesList as any)[noteId];
         style.display = "flex";
 
-        return <div style={style}>
-            <img src={`ProjectsPics/${noteId}/pic0.png`} style={{ width: "70%" }} />
-            <div className="note-comment" style={{ width: "20%" }}>
-                {(note as any).title}
+        return <div id="frame"style={style}>
+            <img src={`NotesPics/${noteId}/pic0.png`} style={{height:"100%", width: "65%", marginRight:"2%" }} />
+            <div style={{width:"33%", height:"100%"}}>
+                <h4 style={{borderBottom:"1px solid grey", maxHeight:"20%", paddingBottom:"1rem", marginBottom:0}}>
+                    {note.title}
+                </h4>
+                <div id="frame-text" style={{paddingTop:"1rem", maxHeight:"80%", overflowY:"scroll"}}>
+                    {(note.description) as any}
+                </div>
             </div>
         </div>
 
-    } 
+    }
     style.display = "none"
 
     return <div></div>

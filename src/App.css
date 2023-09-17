@@ -1,11 +1,9 @@
 html,
 body {
   margin: 0;
-  font-size: 14px;
 }
 
 #App {
-  z-index: 1;
   position: relative;
 }
 
@@ -21,7 +19,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 10%;
+  margin: 0 5%;
 }
 
 nav {
@@ -33,7 +31,7 @@ nav {
 
 nav p {
   margin-top: 0;
-  padding-top: 10px;
+  padding-top: 1rem;
   font-size: 1.2rem;
 }
 
@@ -52,6 +50,36 @@ nav p:hover {
   display: block;
 }
 
+.arrow {
+  border-top: solid 1px black;
+  border-left: solid 1px black;
+  width: 2rem;
+  height: 2rem;
+  box-sizing: border-box;
+}
+
+.left {
+  padding-right: 2rem;
+  transform: rotate(-45deg);
+}
+
+.right {
+  padding-left: 2rem;
+  transform: rotate(135deg);
+}
+
+footer {
+  padding: 0 2rem;
+  background-color: grey;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 768px) {
 
   #App>header {
@@ -60,8 +88,5 @@ nav p:hover {
 
   #App>header #logo {
     font-size: 5rem;
-  }
-
-  #noteShowOff {
   }
 }
