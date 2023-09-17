@@ -25,7 +25,7 @@ function Project(props: ProjectProps) {
     }
 
     techUsed = props.techUsed.reduce((techList: JSX.Element[], val) =>
-        techList.concat(<FontAwesomeIcon icon={val} />), techUsed)
+        techList.concat(<FontAwesomeIcon key={val.iconName} icon={val} />), techUsed)
 
     return <div className='projectCard'>
         <div id='header'>
@@ -61,7 +61,7 @@ function ProjectsFragment() {
     let projectCardsList: JSX.Element[] = []
 
     Object.entries(ProjectsList).forEach((item) => {
-        projectCardsList.push(<><Project githubLink={item[1].githubLink} url={item[1].websiteLink} projectId={item[0]} displayedName={item[1].displayedName} techUsed={item[1].techUsed} imagesNum={item[1].imgNum} /></>)
+        projectCardsList.push(<Project key={item[1].githubLink} githubLink={item[1].githubLink} url={item[1].websiteLink} projectId={item[0]} displayedName={item[1].displayedName} techUsed={item[1].techUsed} imagesNum={item[1].imgNum} />)
     })
 
     return <>{projectCardsList}</>
