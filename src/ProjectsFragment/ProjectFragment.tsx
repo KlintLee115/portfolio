@@ -25,7 +25,7 @@ function Project(props: ProjectProps) {
     }
 
     techUsed = props.techUsed.reduce((techList: JSX.Element[], val) =>
-        techList.concat(<FontAwesomeIcon key={val.iconName} icon={val} />), techUsed)
+        techList.concat(<FontAwesomeIcon size='2x' key={val.iconName} icon={val} />), techUsed)
 
     return <div className='projectCard'>
         <div id='header'>
