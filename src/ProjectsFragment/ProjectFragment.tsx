@@ -1,58 +1,36 @@
-import React, { useState } from 'react';
 import { ProjectsList } from './Projects';
 import './Projects.css'
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface ProjectProps {
     displayedName: string,
-    techUsed: IconDefinition[]
-    imagesNum: number
+    techUsed: string[],
     projectId: string
-    githubLink: string, 
-    url: string
+    githubLink: string,
+    url: string,
+    description: string
 }
 
 function Project(props: ProjectProps) {
 
-    const [currDisplayImgIdx, setCurrDisplayImgIdx] = useState(0)
-
     let techUsed: JSX.Element[] = []
-    let images: JSX.Element[] = []
 
-    for (let i = 0; i < props.imagesNum; i++) {
-        images.push(<img key={i} src={"ProjectsPics/" + props.projectId + "/pic" + i + ".png"} />)
-    }
+    techUsed = props.techUsed.reduce((techList: JSX.Element[], techName) =>
+        techList.concat(<p key={techName} style={{ margin: 0, fontWeight: "bold", boxShadow: "0 0 10px rgba(0,0,0,.1)", padding: "0.5rem 1rem" }}>{techName}</p>), techUsed)
 
-    techUsed = props.techUsed.reduce((techList: JSX.Element[], val) =>
-        techList.concat(<FontAwesomeIcon size='2x' key={val.iconName} icon={val} />), techUsed)
+    return <div className='projectCard' style={{ display: "flex" }}>
+        <img key={props.projectId} src={"/ProjectsPics/" + props.projectId + ".png"} style={{ borderRadius: "5%", boxShadow: '0 0 10px rgba(0,0,0,.1)' }} />
+        <div id='projectTexts' style={{ fontSize: "1.1rem", textAlign: "center" }}>
+            <p style={{ fontWeight: "bold", marginTop: "30px" }}>{props.displayedName.toUpperCase()}</p>
+            <p style={{ textAlign: "center", color: "#767676", fontWeight: 500 }}>{props.description}</p>
+            <div style={{ display: "flex", width: "100%", justifyContent: "space-evenly" }}>{techUsed}</div>
 
-    return <div className='projectCard'>
-        <div id='header'>
-            <div>
-                <p style={{ fontSize: "1.5rem" }}>{props.displayedName}</p>
-                <p style={{ fontSize: "1.2rem" }}>Tech used: {techUsed}</p>
-            </div>
-            <div id='icons'>
-                <a href={props.githubLink}><img src="github-sign.png" alt=""/></a>
-                <a href={props.url}>
-                    <img src="browserIcon.png" alt="" />
-                </a>
+            <div id='links' style={{ display: "flex", justifyContent: "center", gap: "30px", marginTop: "40px" }}>
+                <a href={props.githubLink} style={{ display: "flex", alignItems: "center", gap: "4px" }}>Code
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="tabler-icon tabler-icon-brand-github"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>                </a>
+                <a href={props.url} style={{ display: "flex", alignItems: "center", gap: "4px" }}>Website
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="tabler-icon tabler-icon-external-link"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"></path></svg>                </a>
             </div>
         </div>
-
-        <div className='project-container'>
-
-            <i className='arrow left' onClick={() =>
-                setCurrDisplayImgIdx(currDisplayImgIdx == 0 ? props.imagesNum - 1 : currDisplayImgIdx - 1)
-            }></i>
-            {images[currDisplayImgIdx]}
-            <i className='arrow right' onClick={() =>
-                setCurrDisplayImgIdx(currDisplayImgIdx == props.imagesNum - 1 ? 0 : currDisplayImgIdx + 1)
-            }></i>
-        </div>
-        <div style={{ border: "3px solid blue", borderBottom: 0, borderRight: 0, width: "1.5rem", height: "1.5rem", top: "-3%", left: "-5%", position: "absolute" }}></div>
-        <div style={{ border: "3px solid blue", borderTop: 0, borderRight: 0, width: "1.5rem", height: "1.5rem", bottom: "-3%", left: "-5%", position: "absolute" }}></div>
 
     </div>
 }
@@ -61,10 +39,10 @@ function ProjectsFragment() {
     let projectCardsList: JSX.Element[] = []
 
     Object.entries(ProjectsList).forEach((item) => {
-        projectCardsList.push(<Project key={item[1].githubLink} githubLink={item[1].githubLink} url={item[1].websiteLink} projectId={item[0]} displayedName={item[1].displayedName} techUsed={item[1].techUsed} imagesNum={item[1].imgNum} />)
+        projectCardsList.push(<Project key={item[1].githubLink} description={item[1].description} githubLink={item[1].githubLink} url={item[1].websiteLink} projectId={item[0]} displayedName={item[1].displayedName} techUsed={item[1].techUsed} />)
     })
 
-    return <>{projectCardsList}</>
+    return projectCardsList
 }
 
 export { ProjectsFragment };

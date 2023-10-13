@@ -9,12 +9,6 @@ interface NoteProps {
     links: string[]
 }
 
-const NotesFragmentStyle: React.CSSProperties = {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    marginBottom:"auto"
-}
-
 function Note(props: NoteProps) {
 
     return <img onClick={() => props.setShowOffNote(props.noteId)} style={{ width: "100%", aspectRatio: "1/1", cursor:"pointer" }} src={"NotesPics/" + props.noteId + "/pic0.png"} />
@@ -28,10 +22,8 @@ function NotesFragment(props: { setNote: React.Dispatch<React.SetStateAction<str
             notesList.push(<><Note key={item[0]} setShowOffNote={props.setNote} noteId={item[0]} displayedTitle={(item[1] as any).title} imagesNum={(item[1] as any).imgNum} links={(item[1] as any).referenceLinks} /></>)
         })
 
-        return <div style={NotesFragmentStyle}>{notesList}</div>
+        return <div id="notesGrid">{notesList}</div>
     }
-
-    return <></>
 }
 
 export default NotesFragment
