@@ -21,7 +21,7 @@ function NoteShowOff(props: NoteShowOffProps) {
     let noteId = props.id
     if (noteId) {
 
-        let note = (NotesList as any)[noteId];
+        let note = NotesList[noteId];
         style.display = "flex";
 
         return <div id="frame"style={style}>
@@ -37,7 +37,6 @@ function NoteShowOff(props: NoteShowOffProps) {
         </div>
 
     }
-    style.display = "none"
 
     return <div></div>
 

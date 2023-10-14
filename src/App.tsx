@@ -1,19 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './App.css';
 import { ProjectsFragment } from './ProjectsFragment/ProjectFragment';
-import NotesFragment from './NotesFragment/NotesFragment';
+import NotesFragment, {noteIDType} from './NotesFragment/NotesFragment';
 import NoteShowOff from './NoteShowOff';
 import React from 'react';
 
-// function AppEventListener(e: React.MouseEvent<HTMLDivElement, MouseEvent>, setCurrNote: React.Dispatch<React.SetStateAction<currNoteType>>, currNote: currNoteType) {
-  
-function AppEventListener(e: React.MouseEvent<HTMLDivElement, MouseEvent>, setCurrNote: React.Dispatch<React.SetStateAction<currNoteType>>) {
-  e.currentTarget === document.getElementById('App')&& setCurrNote(undefined)
+function AppEventListener(e: React.MouseEvent<HTMLDivElement, MouseEvent>, setCurrNote: React.Dispatch<React.SetStateAction<noteIDType>>, currNote: any) {
+  e.currentTarget === document.getElementById('App') && currNote && setCurrNote(undefined) 
 }
 
-type currNoteType = undefined | string
 
 enum TabOptions {
   Projects, Notes
@@ -22,12 +19,13 @@ enum TabOptions {
 function App() {
 
   const [selectedTab, setSelectedTab] = useState(TabOptions.Projects)
-  const [currNote, setCurrNote] = useState<currNoteType>(undefined)
+  const [currNote, setCurrNote] = useState<noteIDType>(undefined)
 
   return (
+
     <>
-      {/* <div id="App" onClick={(e) => AppEventListener(e, setCurrNote, currNote)}> */ }
-      <div id="App" onClick={(e) => AppEventListener(e, setCurrNote)}>
+      <div id="App" onClick={(e) => AppEventListener(e, setCurrNote, currNote)}>
+
         <header>
           <p id='logo'>K.L</p>
           <div>
