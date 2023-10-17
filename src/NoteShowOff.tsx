@@ -30,7 +30,7 @@ function NoteShowOff(props: NoteShowOffProps) {
                 <h4 style={{borderBottom:"1px solid grey", maxHeight:"20%", paddingBottom:"1rem", marginBottom:0}}>
                     {note.title}
                 </h4>
-                <div id="frame-text" style={{paddingTop:"1rem", maxHeight:"80%", overflowY:"scroll"}}>
+                <div id="frame-text" style={{paddingTop:"1rem", maxHeight:"80%", overflowY:"auto"}}>
                     {(note.description) as any}
                 </div>
             </div>
