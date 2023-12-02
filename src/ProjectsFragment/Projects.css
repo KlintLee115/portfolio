@@ -1,9 +1,7 @@
 .projectCard {
     flex-direction: column;
-    margin: 0 auto;
     margin-bottom: 3.5rem;
     align-items: center;
-    width: 60%;
     box-shadow: 0 0 10px rgba(0,0,0,.1);
     padding: 1.5rem 0.2rem;
     border-radius: 1.2%;

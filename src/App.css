@@ -24,56 +24,17 @@ body {
   border-radius: 50%
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  position: sticky;
-  top: 0;
-  background-color: white;
-  gap: 30%;
-  border-top: 1px solid #C7C2C2;
-}
-
-nav p {
-  margin-top: 0;
-  padding-top: 1rem;
-  font-size: 1.2rem;
-  font-family: Verdana, Tahoma, sans-serif;
-  cursor: pointer;
-}
-
-#notesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-#notesGrid img {
-  width: 40%;
-}
-
-#noteShowOff {
-  position: absolute;
-  z-index: 2;
-  top: 10%;
-  background-color: aquamarine;
-  left: 5%;
-  right: 5%;
-  bottom: 10%;
-  display: block;
+#App p {
+  margin: 1.5vh 0;
 }
 
 @media screen and (min-width: 958px) {
   #App>header #logo {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 
   #App>header {
     justify-content: space-between;
-    margin: clamp(2%, 3%,4%) clamp(20%, 26%, 30%);
-  }
-
-  #notesGrid {
-    margin: 0 20%;
-    grid-template-columns: repeat(4, 1fr);
+    margin: clamp(0.5vh, 1vh, 2vh) clamp(20%, 26%, 30%);
   }
 }
