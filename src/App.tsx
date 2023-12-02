@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './App.css';
+
 import { ProjectsFragment } from './ProjectsFragment/ProjectFragment';
 import NotesFragment, {noteIDType} from './NotesFragment/NotesFragment';
 import NoteShowOff from './NoteShowOff';
