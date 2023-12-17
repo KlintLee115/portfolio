@@ -15,14 +15,14 @@ function Project(props: ProjectProps) {
     let techUsed: JSX.Element[] = []
 
     techUsed = props.techUsed.reduce((techList: JSX.Element[], techName) =>
-        techList.concat(<p key={techName} style={{ margin: 0, fontWeight: "bold", boxShadow: "0 0 10px rgba(0,0,0,.1)", padding: "0.5rem 1rem" }}>{techName}</p>), techUsed)
+        techList.concat(<p key={techName} style={{ marginTop:"0.5vh", fontWeight: "bold", boxShadow: "0 0 10px rgba(0,0,0,.1)", padding: "0.5rem 1rem" }}>{techName}</p>), techUsed)
 
-    return <div className='projectCard' style={{ display: "flex" }}>
-        <img key={props.projectId} src={"/ProjectsPics/" + props.projectId + ".png"} style={{ borderRadius: "5%", boxShadow: '0 0 10px rgba(0,0,0,.1)' }} />
+    return <div className='projectCard' style={{ display: "flex"}}>
+        <img key={props.projectId} src={"/ProjectsPics/" + props.projectId + ".png"} style={{ borderRadius: "5%", boxShadow: '0 0 10px rgba(0,0,0,.1)', maxHeight:"70vh", objectFit:"contain" }} />
         <div id='projectTexts' style={{ fontSize: "1.1rem", textAlign: "center" }}>
             <p style={{ fontWeight: "bold", marginTop: "30px" }}>{props.displayedName.toUpperCase()}</p>
             <p style={{ textAlign: "center", color: "#767676", fontWeight: 500 }}>{props.description}</p>
-            <div style={{ display: "flex", width: "100%", justifyContent: "space-evenly" }}>{techUsed}</div>
+            <div style={{ display: "flex", width: "100%", justifyContent: "space-evenly", flexWrap:"wrap" }}>{techUsed}</div>
 
             <div id='links' style={{ display: "flex", justifyContent: "center", gap: "30px", marginTop: "40px" }}>
                 <a href={props.githubLink} style={{ display: "flex", alignItems: "center", gap: "4px" }}>Code
