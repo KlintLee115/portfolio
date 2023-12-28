@@ -2,7 +2,7 @@
     flex-direction: column;
     margin-bottom: 3.5rem;
     align-items: center;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     padding: 1.5rem 0.2rem;
     border-radius: 1.2%;
 }
@@ -11,11 +11,11 @@
     width: 90%;
 }
 
-.projectCard #links a{
+.projectCard #links a {
     color: black;
 }
 
-.projectCard #links a:hover{
+.projectCard #links a:hover {
     color: blue;
 }
 
@@ -23,6 +23,25 @@
     width: 60%;
 }
 
+.projectCard .techNames {
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .projectCard {
+        box-shadow: 0 0 10px rgb(255, 255, 255, 0.75);
+    }
+
+    .projectThumbnail {
+        background-color: white;
+        color: white;
+    }
+
+    .techNames {
+        box-shadow: 0 0 10px rgb(146, 146, 146);
+    }
+}
 
 
 @media screen and (min-width: 958px) {

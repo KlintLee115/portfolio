@@ -9,7 +9,7 @@ function App() {
   return (
 
     <>
-      <div id="App" style={{backgroundColor:"white"}}>
+      <div id="App">
 
         <header>
           <p id='logo'>K.L</p>
