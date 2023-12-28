@@ -41,6 +41,10 @@
     .techNames {
         box-shadow: 0 0 10px rgb(146, 146, 146);
     }
+
+    .projectCard #links a {
+        color: white;
+    }
 }
 
 
