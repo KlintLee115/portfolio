@@ -1,0 +1,18 @@
+a{
+    color: black;
+}
+
+a:hover{
+    color: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    a {
+        color: white;
+    }
+
+    a:hover{
+        color: cyan;
+    }
+}
