@@ -8,7 +8,7 @@ export default function ProjectsDisplay() {
 
     return (
         <section className='mt-20 mx-auto w-[60%]'>
-            <h1 className='text-4xl mb-10'>Projects</h1>
+            <h1 className='text-3xl mb-10'>Projects</h1>
             {
                 Object.entries(ProjectsList).map(async ([projectId, project]) => {
 
