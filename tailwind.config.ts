@@ -16,8 +16,13 @@ const config: Config = {
       boxShadow: {
         projectCardLightGray: '0 0 10px rgba(255, 255, 255, 0.75)',
         projectCardDefault: '0 0 10px rgba(0, 0, 0, .95)',
+        
         projectImgDefault: '0 0 10px rgba(0, 0, 0, .4)',
+
         projectTechUsedDefault: '0 0 10px rgba(0, 0, 0, .6)',
+
+        linkLightTheme: '0 0 10px blue',
+        linkDarkTheme: '0 0 10px cyan',
       }
     },
   },
