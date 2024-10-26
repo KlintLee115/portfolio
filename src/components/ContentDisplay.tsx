@@ -5,13 +5,14 @@ import { ProjectType } from "../Data/Projects";
 import Image from 'next/image';
 import { ContentType } from "@/types/types";
 import { SiHtml5, SiCss3, SiTypescript, SiNextdotjs, SiMicrosoftazure, SiPostgresql, SiTailwindcss, SiStripe, SiReact } from "react-icons/si";
+import LinkedInIcon from "./LinkedInIcon";
 
 export default function ContentDisplay(props: ProjectType | ContentType) {
 
     const { displayedName, description, image, url } = props;
 
     return <div className='flex flex-col md:flex-row mb-20 shadow-projectCardDefault dark:shadow-projectCardLightGray py-6 px-10 gap-x-10 lg:justify-evenly'>
-        <div className='rounded-md shadow-projectImgDefault max-w-[60%] min-w-[50%] text-white'>
+        <div className='rounded-md max-w-[60%] min-w-[50%] text-white'>
             <Link className="relative w-full h-full block" href={url} target='_blank'>
                 <Image alt={displayedName} className="object-contain" fill src={image} />
             </Link>
@@ -52,11 +53,7 @@ export default function ContentDisplay(props: ProjectType | ContentType) {
 
                     (
                         <Link href={props.url} target="_blank" className='flex w-fit mx-auto gap-3 items-center shadow-linkLightTheme dark:shadow-linkDarkTheme mt-5 font-bold py-2 px-4'>
-                            <div className='bg-cyan-500 rounded-sm'>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="black" stroke="cyan" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="tabler-icon tabler-icon-brand-github">
-                                    <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
-                                </svg>
-                            </div>
+                            <LinkedInIcon url={props.url}/>
                             View article
                         </Link>
                     )
