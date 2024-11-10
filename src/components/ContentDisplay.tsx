@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { ProjectLinks } from "./Projects/ProjectLinksComponent";
-import { ProjectType } from "../Data/Projects";
+import { ProjectType } from "../app/projects/Projects";
 import Image from 'next/image';
 import { ContentType } from "@/types/types";
 import { SiHtml5, SiCss3, SiTypescript, SiNextdotjs, SiMicrosoftazure, SiPostgresql, SiTailwindcss, SiStripe, SiReact } from "react-icons/si";

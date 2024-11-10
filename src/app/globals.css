@@ -11,3 +11,14 @@
 body {
   color: rgb(var(--foreground-rgb));
 }
+
+a{
+  color: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  a {
+      color: cyan;
+  }
+}

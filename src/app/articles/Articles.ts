@@ -7,7 +7,7 @@ const ArticlesList: { [key: string]: Omit<ContentType, 'image'> } = {
         description: "This article goes through the basics of database indexes, and why common text searching methods like %{searchterm}% may be suboptimal. \n And finally, it talks about the solution to these problems with a benchmark result.",
         url: "https://www.linkedin.com/pulse/speeding-up-database-text-searches-klint-lee-gyk2c/?trackingId=Iurdu%2FgSS3SgcSqwicy1yQ%3D%3D",
     },
-    'Locks_To_MVCC': {
+    'Locks_To_MVcc': {
         displayedName: 'From Locks to MVCC: Enhancing Performance in ACID-Compliant Databases',
         description: "This article talks about ACID in databases, and how locks and MVCC differ in performance and other aspects with a benchmark result.",
         url: "https://www.linkedin.com/pulse/speeding-up-database-text-searches-klint-lee-gyk2c/?trackingId=Iurdu%2FgSS3SgcSqwicy1yQ%3D%3D",

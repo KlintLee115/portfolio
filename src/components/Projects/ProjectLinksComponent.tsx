@@ -1,6 +1,6 @@
 import React from 'react'
 import LinkComponent from '../LinkComponent';
-import { ProjectType } from '../../Data/Projects';
+import { ProjectType } from '../../app/projects/Projects';
 
 const ProjectLinks: React.FC<Pick<ProjectType, 'githubLink' | 'url' | 'extraLinks'>> = ({ githubLink, url, extraLinks }) => (
     <div id='links' className='flex justify-center gap-5 mt-10 flex-wrap'>

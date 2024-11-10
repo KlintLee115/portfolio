@@ -1,6 +1,5 @@
 import React from 'react';
-import '../DisplayItem.css'
-import ArticlesList from '../../Data/Articles';
+import ArticlesList from './Articles';
 import ContentDisplay from '@/components/ContentDisplay';
 
 export default function () {

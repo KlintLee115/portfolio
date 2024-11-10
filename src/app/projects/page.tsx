@@ -1,6 +1,5 @@
 import React from 'react';
-import ProjectsList from '../../Data/Projects';
-import '../DisplayItem.css'
+import ProjectsList from './Projects';
 import ContentDisplay from '@/components/ContentDisplay';
 
 export default function Projects() {
