@@ -1,9 +1,9 @@
 import React from 'react';
 import ProjectsList from '../../Data/Projects';
 import '../DisplayItem.css'
-import ContentDisplay from '../ContentDisplay';
+import ContentDisplay from '@/components/ContentDisplay';
 
-export default function ProjectsDisplay() {
+export default function Projects() {
 
     return <div>
         {Object.entries(ProjectsList).map(([projectId, project]) => {

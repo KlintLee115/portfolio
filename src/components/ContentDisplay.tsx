@@ -5,7 +5,7 @@ import { ProjectType } from "../Data/Projects";
 import Image from 'next/image';
 import { ContentType } from "@/types/types";
 import { SiHtml5, SiCss3, SiTypescript, SiNextdotjs, SiMicrosoftazure, SiPostgresql, SiTailwindcss, SiStripe, SiReact } from "react-icons/si";
-import LinkedInIcon from "./LinkedInIcon";
+import { LinkedInIcon } from "./LinkedIn";
 
 export default function ContentDisplay(props: ProjectType | ContentType) {
 
@@ -53,7 +53,7 @@ export default function ContentDisplay(props: ProjectType | ContentType) {
 
                     (
                         <Link href={props.url} target="_blank" className='flex w-fit mx-auto gap-3 items-center shadow-linkLightTheme dark:shadow-linkDarkTheme mt-5 font-bold py-2 px-4'>
-                            <LinkedInIcon url={props.url}/>
+                            <LinkedInIcon/>
                             View article
                         </Link>
                     )
