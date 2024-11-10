@@ -12,7 +12,7 @@ export default function () {
     const [tab, setTab] = useState<TabOptions>('projects')
 
     return (
-        <section className='mt-20 mx-auto w-3/4'>
+        <section className='mt-20 mx-auto w-5/6'>
 
             <Tabs  tab={tab} setTab={setTab}/>
 

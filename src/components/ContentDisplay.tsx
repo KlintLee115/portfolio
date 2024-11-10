@@ -11,8 +11,8 @@ export default function ContentDisplay(props: ProjectType | ContentType) {
 
     const { displayedName, description, image, url } = props;
 
-    return <div className='flex flex-col md:flex-row mb-20 shadow-projectCardDefault dark:shadow-projectCardLightGray py-6 px-10 gap-x-10 lg:justify-evenly'>
-        <div className='rounded-md max-w-[60%] min-w-[50%] text-white'>
+    return <div className='flex flex-col lg:flex-row mb-20 shadow-projectCardDefault dark:shadow-projectCardLightGray py-6 px-10 gap-x-10 lg:justify-evenly'>
+        <div className='rounded-md max-w-[70%] min-w-[50%] text-white'>
             <Link className="relative w-full h-full block" href={url} target='_blank'>
                 <Image alt={displayedName} className="object-contain" fill src={image} />
             </Link>

@@ -17,10 +17,14 @@ export default function ArticlesDisplay() {
                     description={description}
                     url={url}
                     displayedName={displayedName}
-                    image={article.image}
+                    image={getImgPath(articleId)}
                 />
             )
         })
         }
     </div>
+}
+
+function getImgPath(imgName: string) {
+    return `/ArticlePics/${imgName}.png`
 }
