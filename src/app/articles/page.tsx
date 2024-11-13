@@ -2,7 +2,7 @@ import React from 'react';
 import ArticlesList from './Articles';
 import ContentDisplay from '@/components/ContentDisplay';
 
-export default function () {
+export default function ArticlesPage() {
 
     return <div>
         {Object.entries(ArticlesList).map(([articleId, article]) => {

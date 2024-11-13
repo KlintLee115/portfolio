@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link";
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect } from "react";
 
 type TabOptions = 'projects' | 'articles'
 
@@ -9,6 +10,13 @@ export default function Tabs() {
 
     const tabs: TabOptions[] = ['projects', 'articles']
     const pathname = usePathname()
+    const router = useRouter()
+
+    useEffect(() => {
+        if (pathname === "/") {
+            router.push("/projects");
+        }
+    }, [pathname, router])
 
     const getClassName = (currentTab: TabOptions) => 
         `cursor-pointer text-3xl mb-10 ${pathname.endsWith(currentTab) ? "underline underline-offset-8" : ""}`;
