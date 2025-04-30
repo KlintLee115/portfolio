@@ -36,7 +36,7 @@ export default function RootLayout({
 
             <p>klintlee1@gmail.com</p>
 
-            <Link target='_blank' href={"/software_resume.pdf"}>View my resume</Link>
+            <Link target='_blank' href={"https://docs.google.com/document/d/1_RVeDZwr9auDKL_aaQcB0f5dEK1BQIztIgVLNPbAghw/edit?usp=sharing"}>View my resume</Link>
 
           </div>
         </header>
