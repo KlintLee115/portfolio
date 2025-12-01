@@ -37,8 +37,7 @@ const ProjectsList: { [key: string]: ProjectType } = {
     },
     'KSports': { image: getImgPath('KSports'), displayedName: "K Sports", 
         techUsed: ['NextJS', 'Azure Blob', 'PostgresDB', 'Tailwind CSS', 'Stripe', '.NET'], url: '', 
-        githubLink: 'https://github.com/KlintLee115/ksports', description: "A simple full stack e commerce website" },
-    'Sepakat_lk': { image: getImgPath('Sepakat_lk'), displayedName: 'Sepakat Lk', techUsed: ['React'], url: 'https://sepakatlk.netlify.app/', githubLink: '', description: "The landing page of a website for a Malaysia construction company called Sepakat LK." },
+        githubLink: 'https://github.com/KlintLee115/ksports', description: "A simple full stack e commerce website" }
 }
 
 
